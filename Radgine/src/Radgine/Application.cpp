@@ -5,7 +5,8 @@
 namespace Rg
 {
 	Application::Application() :
-		m_Window(std::unique_ptr<WindowTemplate>(new Window()))
+		m_Window(std::unique_ptr<WindowTemplate>(new Window())),
+		m_Scenes(Scenes())
 	{
 
 	}
@@ -20,6 +21,12 @@ namespace Rg
 		while (m_Window->IsRunning())
 		{
 			m_Window->OnUpdate();
+			m_Scenes.UpdateCurrent();
 		}
+	}
+
+	void Application::PushScene(Scene* scene)
+	{
+
 	}
 }
