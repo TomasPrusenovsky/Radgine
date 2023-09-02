@@ -22,8 +22,6 @@ project "Radgine"
 	targetdir ("bin/"..outputdir.."/%{prj.name}")
 	objdir ("bin-int/"..outputdir.."/%{prj.name}")
 
-	pchheader "rpch.h"
-	pchsource "Radgine/src/rpch.cpp"
 
 	files
 	{
@@ -73,7 +71,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "oN"
+	staticruntime "on"
 
 	targetdir ("bin/".. outputdir .."/%{prj.name}")
 	objdir ("bin-int/".. outputdir .."/%{prj.name}")
