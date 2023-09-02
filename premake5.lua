@@ -13,9 +13,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Radgine/vendor/GLFW/include"
+IncludeDir["Glad"] = "Radgine/vendor/Glad/include"
 
 group "Dependemcies"
 	include "Radgine/vendor/GLFW"
+	include "Radgine/vendor/Glad"
 
 group ""
 
@@ -41,11 +43,13 @@ project "Radgine"
 	{
 		"%{prj.name}/src",
 		"%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -96,6 +100,7 @@ project "Sandbox"
 	includedirs
 	{
 		"Radgine/src",
+        "%{IncludeDir.Glad}",
 	}
 
 	links

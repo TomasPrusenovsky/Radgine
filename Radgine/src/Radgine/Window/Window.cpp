@@ -49,7 +49,7 @@ namespace Rg
 		m_Window = glfwCreateWindow(m_Data.width, m_Data.height, m_Data.title, NULL, NULL);
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
-		SetVSync(false);
+		SetVSync(true);
 
 		// GLFW callbacks
 		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)

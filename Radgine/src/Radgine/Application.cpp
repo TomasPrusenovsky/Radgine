@@ -2,13 +2,15 @@
 #include "Application.h"
 #include "Window/Window.h"
 
+#include "glad/glad.h"
+
 namespace Rg
 {
 	Application::Application() :
 		m_Window(std::unique_ptr<WindowTemplate>(new Window())),
 		m_Scenes(Scenes())
 	{
-
+		gladLoadGL();
 	}
 
 	Application::~Application()
@@ -28,5 +30,6 @@ namespace Rg
 	void Application::PushScene(Scene* scene)
 	{
 		m_Scenes.PushScene(scene);
+		m_Scenes.SetCurrentScene(0);
 	}
 }

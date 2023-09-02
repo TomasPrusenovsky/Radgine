@@ -2,3 +2,6 @@
 	path = Radgine/vendor/GLFW
 	url = https://github.com/TomasPrusenovsky/glfw.git
 	branch = latest
+[submodule "Radgine/vendor/ImGui"]
+	path = Radgine/vendor/ImGui
+	url = https://github.com/TomasPrusenovsky/imgui.git
