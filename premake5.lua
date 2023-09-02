@@ -11,6 +11,12 @@ workspace "Radgine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Radgine/vendor/GLFW/include"
+
+group "Dependemcies"
+	include "Radgine/vendor/GLFW"
+
 group ""
 
 project "Radgine"
@@ -22,6 +28,8 @@ project "Radgine"
 	targetdir ("bin/"..outputdir.."/%{prj.name}")
 	objdir ("bin-int/"..outputdir.."/%{prj.name}")
 
+	pchheader "rpch.h"
+	pchsource "Radgine/src/rpch.cpp"
 
 	files
 	{
@@ -32,10 +40,13 @@ project "Radgine"
 	includedirs
 	{
 		"%{prj.name}/src",
+		"%{IncludeDir.GLFW}",
 	}
 
 	links
 	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -47,10 +58,10 @@ project "Radgine"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
-		}
+		-- postbuildcommands
+		-- {
+		-- 	("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
+		-- }
 
 	filter "configurations:Debug"
 		defines "R_DEBUG"

@@ -1,6 +1,23 @@
-#include "Test.h"
+#include "Radgine.h"
+
+class SandboxApp : public Rg::Application
+{
+public:
+	SandboxApp()
+	{
+
+	}
+
+	~SandboxApp()
+	{
+
+	}
+};
+
 
 int main()
 {
-	Print();
+	auto app = new SandboxApp();
+	app->Run();
+	delete app;
 }
