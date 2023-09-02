@@ -1,0 +1,4 @@
+[submodule "Radgine/vendor/GLFW"]
+	path = Radgine/vendor/GLFW
+	url = https://github.com/TomasPrusenovsky/glfw.git
+	branch = latest
