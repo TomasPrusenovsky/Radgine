@@ -5,8 +5,8 @@ namespace Rg
 	class Scene
 	{
 	public:
-		Scene(const char* name) { m_Name = name; }
-		virtual ~Scene() = 0;
+		Scene(const char* name = "Default") { m_Name = name; }
+		~Scene() {};
 
 		virtual void OnUpdate() = 0;
 		virtual void OnImGuiUpdate() = 0;

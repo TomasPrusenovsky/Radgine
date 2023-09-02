@@ -10,7 +10,8 @@ namespace Rg
 
 	Scenes::~Scenes()
 	{
-
+		for (Scene* scene : m_Scenes)
+			delete scene;
 	}
 
 	void Scenes::UpdateCurrent()
@@ -21,5 +22,6 @@ namespace Rg
 	void Scenes::PushScene(Scene* scene)
 	{
 		m_Scenes.push_back(scene);
+		m_CurrentScene = m_Scenes[0];
 	}
 }

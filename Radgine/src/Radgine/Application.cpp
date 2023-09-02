@@ -27,6 +27,6 @@ namespace Rg
 
 	void Application::PushScene(Scene* scene)
 	{
-
+		m_Scenes.PushScene(scene);
 	}
 }
