@@ -28,11 +28,11 @@ namespace Rg
 
 	void VertexArray::Bind()
 	{
-
+		glBindVertexArray(m_ID);
 	}
 
 	void VertexArray::Unbind()
 	{
-
+		glBindVertexArray(0);
 	}
 }
